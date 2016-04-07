@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.twlkyao.myscheme">
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.twlkyao.myscheme.SecondActivity"
+            android:label="@string/title_activity_second"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="SecondActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="SteveqiSecondActivity" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.twlkyao.myscheme.ThirdActivity"
+            android:label="@string/title_activity_third"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="ThirdActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="SteveqiThirdActivity" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.twlkyao.myscheme.MainBroadcastReceiver">
+            <intent-filter>
+                <action android:name="Broadcast" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="SteveqiBroadcast" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
